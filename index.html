@@ -61,7 +61,7 @@
 						<td><input type="text" id="customer-name" name="customer-name"></input></td>
 					</tr>
 					<tr>
-						<td class="meta-head">Ulicaa i broj:</td>
+						<td class="meta-head">Ulica i broj:</td>
 						<td><input type="text" id="customer-address" name="customer-address"></input></td>
 					</tr>
 					<tr>
@@ -81,79 +81,52 @@
 
 			<table id="items">
 				<tr>
-					<th>Item</th>
-					<th>Description</th>
-					<th>Unit Cost</th>
-					<th>Quantity</th>
-					<th>Price</th>
+					<th>Br.</th>
+					<th>Sifra usluge</th>
+					<th>Naziv usluge</th>
+					<th>JM</th>
+					<th>Jedinicna cena (RSD)</th>
+					<th>Kolicina</th>
+					<th>Iznos (RSD)</th>
 				</tr>
 
 				<tr class="item-row">
-					<td class="item-name">
+					<td>
 						<div class="delete-wpr">
-							<textarea>Web Updates</textarea
-							><a class="delete" href="javascript:;" title="Remove row">X</a>
+							<div class="number">1</div>
+							<a class="delete" href="javascript:;" title="Remove row">X</a>
 						</div>
 					</td>
-					<td class="description">
-						<textarea>
-Monthly web updates for http://widgetcorp.com (Nov. 1 - Nov. 30, 2009)</textarea
-						>
-					</td>
-					<td><textarea class="cost">$650.00</textarea></td>
-					<td><textarea class="qty">1</textarea></td>
-					<td><span class="price">$650.00</span></td>
+					<td><div class="code">123</div></td>
+					<td class="item-name"><div>Lakiranje</div></td>
+					<td><div>n/c</div></td>
+					<td><div class="cost">50000</div></td>
+					<td><div class="quantity">1</div></td>
+					<td><div class="price">50000</div></td>
 				</tr>
 
-				<tr class="item-row">
-					<td class="item-name">
+			<tr class="item-row">
+					<td>
 						<div class="delete-wpr">
-							<textarea>SSL Renewals</textarea
-							><a class="delete" href="javascript:;" title="Remove row">X</a>
+							<div class="number">2</div>
+							<a class="delete" href="javascript:;" title="Remove row">X</a>
 						</div>
 					</td>
-
-					<td class="description">
-						<textarea>
-Yearly renewals of SSL certificates on main domain and several subdomains</textarea
-						>
-					</td>
-					<td><textarea class="cost">$75.00</textarea></td>
-					<td><textarea class="qty">3</textarea></td>
-					<td><span class="price">$225.00</span></td>
+					<td><div class="code">134</div></td>
+					<td class="item-name"><div>Farbanje</div></td>
+					<td><div>n/c</div></td>
+					<td><div class="cost">2300</div></td>
+					<td><div class="quantity">2</div></td>
+					<td><div class="price">4600</div></td>
 				</tr>
 
-				<tr id="hiderow">
-					<td colspan="5">
-						<a id="addrow" href="javascript:;" title="Add a row">Add a row</a>
+				<tr class="total-row">
+					<td id="hiderow" colspan="2">
+						<a class="add" href="javascript:;" title="Add a row">Dodaj</a>
 					</td>
-				</tr>
-
-				<tr>
-					<td colspan="2" class="blank"></td>
-					<td colspan="2" class="total-line">Subtotal</td>
+					<td colspan="4" class="total-text">Ukupan iznos</td>
 					<td class="total-value">
-						<div id="subtotal">$875.00</div>
-					</td>
-				</tr>
-				<tr>
-					<td colspan="2" class="blank"></td>
-					<td colspan="2" class="total-line">Total</td>
-					<td class="total-value">
-						<div id="total">$875.00</div>
-					</td>
-				</tr>
-				<tr>
-					<td colspan="2" class="blank"></td>
-					<td colspan="2" class="total-line">Amount Paid</td>
-
-					<td class="total-value"><textarea id="paid">$0.00</textarea></td>
-				</tr>
-				<tr>
-					<td colspan="2" class="blank"></td>
-					<td colspan="2" class="total-line balance">Balance Due</td>
-					<td class="total-value balance">
-						<div class="due">$875.00</div>
+						<div id="total"></div>
 					</td>
 				</tr>
 			</table>
