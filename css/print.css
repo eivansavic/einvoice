@@ -1,5 +1,13 @@
+@import "style.css";
+
+#print-pdf,
 #hiderow,
-.add,
 .delete {
 	display: none;
+}
+
+@media print {
+	.no-print {
+		display: none;
+	}
 }

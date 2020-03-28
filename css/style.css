@@ -25,7 +25,7 @@ table {
 }
 table td,
 table th {
-	border: 1px solid black;
+	border: 1px solid;
 	padding: 5px;
 }
 
@@ -78,7 +78,7 @@ table th {
 }
 
 #fiscal {
-	width: 100px;
+	width: 150px;
 	height: 25px;
 	font: 15px Helvetica, Sans-Serif;
 	border-style: none;
@@ -125,19 +125,21 @@ table th {
 }
 
 #items {
-	text-align: center;
 	clear: both;
 	width: 100%;
 	margin: 30px 0 0 0;
-	border: 1px solid black;
+	border: 1px solid;
 }
 #items th {
 	background: #eee;
+}
+#items textarea {
+	width: 80px;
 	height: 50px;
 }
-
-#items tr {
-	height: 40px;
+#items tr.item-row td {
+	border: 0;
+	vertical-align: top;
 }
 #items td.description {
 	width: 300px;
@@ -145,24 +147,39 @@ table th {
 #items td.item-name {
 	width: 175px;
 }
-
-#items tr.total-row {
-	background: #eee;
+#items td.description textarea,
+#items td.item-name textarea {
+	width: 100%;
 }
-
-#items td.total-text {
-	font-weight: bold;
-	padding-right: 20px;
+#items td.total-line {
+	border-right: 0;
 	text-align: right;
 }
-
 #items td.total-value {
-	font-weight: bold;
-	text-align: center;
+	border-left: 0;
+	padding: 10px;
 }
-
+#items td.total-value textarea {
+	height: 20px;
+	background: none;
+}
+#items td.balance {
+	background: #eee;
+}
 #items td.blank {
 	border: 0;
+}
+
+textarea:hover,
+textarea:focus,
+#items td.total-value textarea:hover,
+#items td.total-value textarea:focus {
+	background-color: #e7e7e7;
+	color: black;
+}
+
+.delete:hover {
+	background-color: #f44336;
 }
 
 .delete-wpr {
@@ -181,4 +198,29 @@ table th {
 	left: -22px;
 	font-family: Verdana;
 	font-size: 12px;
+}
+
+#pdf-button {
+	text-align: right;
+	padding-top: 5px;
+}
+
+#print-pdf,
+#addrow {
+	background-color: #4caf50;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+}
+
+#addrow {
+	background-color: #008cba;
+}
+
+html {
+	border: 1px bold solid black;
 }
