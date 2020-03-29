@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Stavke</title>
+		<link rel="stylesheet" href="/css/style.css" />
+		<link
+			rel="stylesheet"
+			href="./node_modules/spectre.css/dist/spectre.min.css"
+		/>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="columns">
+				<div class="column col-10">
+					<h1 class="text-center">Stavke</h1>
+
+					<form id="itemsForm">
+						<div class="form-group">
+							<label class="form-label" for="add-input"
+								>Sifra</label
+							>
+							<input
+								class="form-input"
+								type="text"
+								name="add-input"
+								placeholder="Sifra"
+							/>
+							<label class="form-label" for="add-input"
+								>Naziv</label
+							>
+							<input
+								class="form-input"
+								type="text"
+								name="add-input"
+								placeholder="Naziv"
+							/>
+							<label class="form-label" for="add-input"
+								>Cena</label
+							>
+							<input
+								class="form-input"
+								type="text"
+								name="add-input"
+								placeholder="Cena"
+							/>
+						</div>
+
+						<button class="btn">Add Todo</button>
+					</form>
+				</div>
+			</div>
+		</div>
+
+		<script src="items.js"></script>
+	</body>
+</html>

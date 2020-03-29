@@ -2,14 +2,14 @@
 <html>
 	<head>
 		<meta charset="UTF-8" />
-		<meta
+		<!-- <meta
 			http-equiv="Content-Security-Policy"
 			content="default-src 'self'; script-src 'self'"
 		/>
 		<meta
 			http-equiv="X-Content-Security-Policy"
 			content="default-src 'self'; script-src 'self'"
-		/>
+		/> -->
 		<title>eInvoice</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
@@ -18,6 +18,10 @@
 	</head>
 	<body>
   <body>
+		<div id="items-wrap">
+			<button id="itemsBtn">Stavke</button>
+		</div>
+
 		<div id="page-wrap">
 			<div id="title">STZR I AUTOSERVIS NACA</div>
 
@@ -169,7 +173,7 @@
 				</tr>
 			</table>
 			<div id="pdf-button">
-				<button id="print-pdf">Print</button>
+				<button id="print-pdf">Stampaj</button>
 			</div>
     </div>
     

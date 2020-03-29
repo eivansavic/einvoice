@@ -2,8 +2,12 @@
 const { app, BrowserWindow, ipcMain, shell } = require("electron");
 const path = require("path");
 
+const DataStore = require("./DataStore");
+
 const fs = require("fs");
 const os = require("os");
+
+// require("electron-reload")(__dirname);
 
 const RESOURCE_PATH = os.tmpdir();
 
@@ -47,22 +51,59 @@ app.on("activate", function() {
 	if (BrowserWindow.getAllWindows().length === 0) createWindow();
 });
 
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and require them here.
-ipcMain.on("print-to-pdf", (event) => {
-	const pdfPath = path.join(RESOURCE_PATH, `${Date.now()}.pdf`);
-	const win = BrowserWindow.fromWebContents(event.sender);
-	win.webContents
-		.printToPDF({ printBackground: true })
-		.then((data) => {
-			fs.writeFile(pdfPath, data, (error) => {
-				if (error) console.log(error);
-				shell
-					.openExternal("file://" + pdfPath)
-					.then(() => event.sender.send("wrote-pdf", pdfPath));
+app.on("ready", main);
+
+const itemsData = new DataStore();
+
+function main() {
+	ipcMain.on("print-to-pdf", (event) => {
+		const pdfPath = path.join(RESOURCE_PATH, `${Date.now()}.pdf`);
+		const win = BrowserWindow.fromWebContents(event.sender);
+		win.webContents
+			.printToPDF({ printBackground: true })
+			.then((data) => {
+				fs.writeFile(pdfPath, data, (error) => {
+					if (error) console.log(error);
+					shell
+						.openExternal("file://" + pdfPath)
+						.then(() => event.sender.send("wrote-pdf", pdfPath));
+				});
+			})
+			.catch((error) => {
+				console.log(error);
 			});
-		})
-		.catch((error) => {
-			console.log(error);
-		});
-});
+	});
+
+	let itemsWindow = null;
+	ipcMain.on("items-window", () => {
+		// if addTodoWin does not already exist
+		if (!itemsWindow) {
+			// create a new add todo window
+
+			itemsWindow = new BrowserWindow({
+				width: 400,
+				height: 400,
+				parent: mainWindow,
+				webPreferences: {
+					nodeIntegration: true,
+					preload: path.join(__dirname, "items.js")
+				}
+			});
+			itemsWindow.loadFile("items.html");
+
+			itemsWindow.on("closed", () => {
+				itemsWindow = null;
+			});
+		}
+	});
+
+	ipcMain.on("add-item", (event, item) => {
+		const updatedItems = itemsData.add(item).items;
+		mainWindow.send("items", updatedItems);
+	});
+
+	ipcMain.on("delete-item", (event, item) => {
+		const updatedItems = itemsData.delete(item).items;
+		mainWindow.send("items", updatedItems);
+	});
+}

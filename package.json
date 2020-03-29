@@ -16,7 +16,10 @@
 	],
 	"author": "GitHub",
 	"license": "CC0-1.0",
-	"devDependencies": {
-		"electron": "8.2.0"
+	"dependencies": {
+		"electron": "8.2.0",
+		"electron-reload": "^1.5.0",
+		"electron-store": "^5.1.1",
+		"spectre.css": "^0.5.8"
 	}
 }
