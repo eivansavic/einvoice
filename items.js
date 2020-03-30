@@ -4,15 +4,13 @@ const { ipcRenderer, remote } = require("electron");
 const DataStore = require("./DataStore");
 
 remote.getCurrentWindow().on("ready", () => {
-	let items = [];
-
 	ipcRenderer.send("get-items");
 
 	ipcRenderer.on("items", function(event, items) {
 		const itemList = document.getElementById("items");
 
-		const itemItems = todos.reduce((html, todo) => {
-			html += `<li class="item">${todo}</li>`;
+		const itemItems = items.reduce((html, item) => {
+			html += `<li class="item">${item.name}</li>`;
 			return html;
 		}, "");
 
