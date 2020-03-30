@@ -76,10 +76,7 @@ function main() {
 
 	let itemsWindow = null;
 	ipcMain.on("items-window", () => {
-		// if addTodoWin does not already exist
 		if (!itemsWindow) {
-			// create a new add todo window
-
 			itemsWindow = new BrowserWindow({
 				width: 400,
 				height: 400,
@@ -94,16 +91,24 @@ function main() {
 			itemsWindow.on("closed", () => {
 				itemsWindow = null;
 			});
+
+			console.log(itemsData.getAll());
+			itemsWindow.send("items", itemsData.getAll());
 		}
 	});
 
 	ipcMain.on("add-item", (event, item) => {
 		const updatedItems = itemsData.add(item).items;
-		mainWindow.send("items", updatedItems);
+		// mainWindow.send("items", updatedItems);
+		itemsWindow.send("items", updatedItems);
 	});
 
 	ipcMain.on("delete-item", (event, item) => {
 		const updatedItems = itemsData.delete(item).items;
-		mainWindow.send("items", updatedItems);
+		itemsWindow.send("items", updatedItems);
+	});
+
+	ipcMain.on("get-items", (event) => {
+		itemsWindow.send("items", itemsData.getAll());
 	});
 }
