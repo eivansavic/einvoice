@@ -25,6 +25,11 @@ class DataStore extends Store {
 		return this.saveAll();
 	}
 
+	addAll(newItems) {
+		this.items = [...this.items, ...newItems];
+		return this.saveAll();
+	}
+
 	delete(item) {
 		this.items = this.items.filter((t) => t !== item);
 		return this.saveAll();

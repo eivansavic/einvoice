@@ -11,6 +11,11 @@
 			content="default-src 'self'; script-src 'self'"
 		/> -->
 		<title>eInvoice</title>
+
+		<!-- <link
+			rel="stylesheet"
+			href="./node_modules/spectre.css/dist/spectre.min.css"
+		/> -->
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
 		<script type="text/javascript" src="js/jquery-1.3.2.min.js"></script>
@@ -18,10 +23,6 @@
 	</head>
 	<body>
   <body>
-		<div id="items-wrap">
-			<button id="itemsBtn">Stavke</button>
-		</div>
-
 		<div id="page-wrap">
 			<div id="title">STZR I AUTOSERVIS NACA</div>
 
@@ -44,7 +45,7 @@
 			</div>
 
 			<div id="customer">
-				<table id="customer-payment">
+				<table id="customer-payment" style="border-width: 1px;">
 					<tr>
 						<td class="meta-head">Datum izdavanja racuna:</td>
 						<td><input type="date" id="date" name="date"></input></td>
@@ -137,7 +138,6 @@
 
 				<tr id="hiderow">
 					<td colspan="5">
-						<!-- <a id="addrow" href="javascript:;" title="Add a row">Add a row</a> -->
 						<button href="javascript:;" id="addrow">Dodaj</button>
 					</td>
 				</tr>
@@ -174,6 +174,9 @@
 			</table>
 			<div id="pdf-button">
 				<button id="print-pdf">Stampaj</button>
+			</div>
+			<div id="add-item-wrap">
+				<button id="add-item-btn">Stavke</button>
 			</div>
     </div>
     

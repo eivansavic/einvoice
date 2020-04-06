@@ -205,9 +205,15 @@ textarea:focus,
 	padding-top: 5px;
 }
 
+#add-item-wrap {
+	text-align: right;
+	padding-top: 5px;
+}
+
+#add-item-btn,
 #print-pdf,
 #addrow {
-	background-color: #4caf50;
+	background-color: #9e5e09;
 	border: none;
 	color: white;
 	padding: 15px 32px;
@@ -218,5 +224,9 @@ textarea:focus,
 }
 
 #addrow {
+	background-color: #4caf50;
+}
+
+#add-item-btn {
 	background-color: #008cba;
 }

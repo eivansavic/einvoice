@@ -257,8 +257,8 @@
 		},
 		{
 			"code": 71,
-			"name": "null",
-			"price": null
+			"name": "0",
+			"price": 0
 		},
 		{
 			"code": 72,
@@ -433,497 +433,497 @@
 		{
 			"code": 116,
 			"name": "Kopča",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 117,
 			"name": "Poklopac maglenke",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 118,
 			"name": "Kućište interkulera",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 119,
 			"name": "Nosač branika",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 120,
 			"name": "Izduvni lonac",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 121,
 			"name": "Parking senzor",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 122,
 			"name": "Amortizer",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 123,
 			"name": "Nosač motora",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 124,
 			"name": "Alternator",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 125,
 			"name": "Alnaser",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 126,
 			"name": "Torzija",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 127,
 			"name": "Letva volana",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 128,
 			"name": "Viljuška",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 129,
 			"name": "Upornice",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 130,
 			"name": "Glavčina",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 131,
 			"name": "Kolevka",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 132,
 			"name": "Kompjuter motora",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 133,
 			"name": "Kućište osigurača",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 134,
 			"name": "Akumulator",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 135,
 			"name": "Servo pumpa",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 136,
 			"name": "Kućište filter za vazduh",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 137,
 			"name": "Držač haube",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 138,
 			"name": "Creva za hladnjake",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 139,
 			"name": "Bočna obloga branika",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 140,
 			"name": "Autolakirerski materijal",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 141,
 			"name": "Branik zadnji",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 142,
 			"name": "Pneumatik (guma)",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 143,
 			"name": "Ojačanje fara",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 144,
 			"name": "Limarski radovi",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 145,
 			"name": "Krak šasije",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 146,
 			"name": "Filteri",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 147,
 			"name": "Držač fara",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 148,
 			"name": "Maska branika ",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 149,
 			"name": "Prskalica za farove",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 150,
 			"name": "Popravka štitnika",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 151,
 			"name": "Električarske usluge",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 152,
 			"name": "Brendiranje automobila",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 153,
 			"name": "Poliranje",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 154,
 			"name": "Ostalo",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 155,
 			"name": "Vrata zadnja",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 156,
 			"name": "Zadnji poklopac (gepek)",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 157,
 			"name": "Odbojnik",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 158,
 			"name": "Zadnje staklo",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 159,
 			"name": "Tapetar",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 160,
 			"name": "Šarka za vrata",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 161,
 			"name": "Usluga popravke vozila",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 162,
 			"name": "Optika trapa",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 163,
 			"name": "Lufter",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 164,
 			"name": "Katadioter",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 165,
 			"name": "Svetlo registarske tablice",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 166,
 			"name": "Unutrašnja plastična zaštita",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 167,
 			"name": "Zadnje dno",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 168,
 			"name": "Unutrašnja obloga veznog lima",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 169,
 			"name": "Obloga prtljažnika",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 170,
 			"name": "Unutrašnja obloga prtljažnika",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 171,
 			"name": "Zadnje unutrašnje svetlo",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 172,
 			"name": "Guma",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 173,
 			"name": "Kraj spone",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 174,
 			"name": "Ram leptir stakla",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 175,
 			"name": "Garnitura za lep. stakla",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 176,
 			"name": "Obloga branika donja",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 177,
 			"name": "Lajsna ruba",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 178,
 			"name": "Bočna reš. usis. vaz.",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 179,
 			"name": "Spojler",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 180,
 			"name": "Donja obloga vrata",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 181,
 			"name": "Kondenzator klime",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 182,
 			"name": "Remenica",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 183,
 			"name": "Aluminijumska obloga",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 184,
 			"name": "Zaštitni lim motora",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 185,
 			"name": "Čep branika",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 186,
 			"name": "Zaštitna lajsna",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 187,
 			"name": "Punjenje klime",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 188,
 			"name": "Rešetka branika",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 189,
 			"name": "Crevo",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 190,
 			"name": "Blatobran unutrašnji",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 191,
 			"name": "Šipka spone",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 192,
 			"name": "Ojačanje gornje",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 193,
 			"name": "Nosač brave",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 194,
 			"name": "Nosač znaka",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 195,
 			"name": "Gornji nosač brave",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 196,
 			"name": "Bočni podupirač veznog lima",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 197,
 			"name": "Usmerivač vazduha",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 198,
 			"name": "Donji porečni nosač",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 199,
 			"name": "Gabaritna slova",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 200,
 			"name": "Staklo retrovizora",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 201,
 			"name": "Obloga branika gornja",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 202,
 			"name": "Šarka",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 203,
 			"name": "Nosač blatobrana",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 204,
 			"name": "Držač veznog lima",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 205,
 			"name": "Obloga branika srednji",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 206,
 			"name": "Komora za far",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 207,
 			"name": "Niklovana lajsna",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 208,
 			"name": "Lepljenje stakla",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 209,
 			"name": "Mikro prekidač",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 210,
 			"name": "Maska za vrata",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 211,
 			"name": "Nalepnica",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 212,
 			"name": "Zadnje podkrilo",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 213,
 			"name": "PVC ukrasna lajsna stuba",
-			"price": null
+			"price": 0
 		},
 		{
 			"code": 214,
 			"name": "Zaštitna lajsna blatobrana",
-			"price": null
+			"price": 0
 		}
 	]
 }

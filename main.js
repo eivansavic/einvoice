@@ -20,8 +20,8 @@ function createWindow() {
 		height: 900,
 		webPreferences: {
 			nodeIntegration: true,
-			preload: path.join(__dirname, "preload.js")
-		}
+			preload: path.join(__dirname, "preload.js"),
+		},
 	});
 
 	// and load the index.html of the app.
@@ -39,13 +39,13 @@ app.allowRendererProcessReuse = true;
 app.whenReady().then(createWindow);
 
 // Quit when all windows are closed.
-app.on("window-all-closed", function() {
+app.on("window-all-closed", function () {
 	// On macOS it is common for applications and their menu bar
 	// to stay active until the user quits explicitly with Cmd + Q
 	if (process.platform !== "darwin") app.quit();
 });
 
-app.on("activate", function() {
+app.on("activate", function () {
 	// On macOS it's common to re-create a window in the app when the
 	// dock icon is clicked and there are no other windows open.
 	if (BrowserWindow.getAllWindows().length === 0) createWindow();
@@ -56,11 +56,15 @@ app.on("ready", main);
 const itemsData = new DataStore();
 
 function main() {
+	loadData();
+
 	ipcMain.on("print-to-pdf", (event) => {
 		const pdfPath = path.join(RESOURCE_PATH, `${Date.now()}.pdf`);
 		const win = BrowserWindow.fromWebContents(event.sender);
 		win.webContents
-			.printToPDF({ printBackground: true })
+			.printToPDF({
+				printBackground: true,
+			})
 			.then((data) => {
 				fs.writeFile(pdfPath, data, (error) => {
 					if (error) console.log(error);
@@ -75,31 +79,27 @@ function main() {
 	});
 
 	let itemsWindow = null;
-	ipcMain.on("items-window", () => {
+	ipcMain.on("add-item-window", () => {
 		if (!itemsWindow) {
 			itemsWindow = new BrowserWindow({
-				width: 400,
-				height: 400,
+				width: 1080,
+				height: 860,
 				parent: mainWindow,
 				webPreferences: {
 					nodeIntegration: true,
-					preload: path.join(__dirname, "items.js")
-				}
+					preload: path.join(__dirname, "add-item.js"),
+				},
 			});
-			itemsWindow.loadFile("items.html");
+			itemsWindow.loadFile("add-item.html");
 
 			itemsWindow.on("closed", () => {
 				itemsWindow = null;
 			});
-
-			console.log(itemsData.getAll());
-			itemsWindow.send("items", itemsData.getAll());
 		}
 	});
 
 	ipcMain.on("add-item", (event, item) => {
 		const updatedItems = itemsData.add(item).items;
-		// mainWindow.send("items", updatedItems);
 		itemsWindow.send("items", updatedItems);
 	});
 
@@ -109,6 +109,14 @@ function main() {
 	});
 
 	ipcMain.on("get-items", (event) => {
-		itemsWindow.send("items", itemsData.getAll());
+		let items = itemsData.getAll().items;
+		itemsWindow.send("items", items);
 	});
+}
+
+function loadData() {
+	if (itemsData.getAll().items.length === 0) {
+		const json = require("./items.json");
+		itemsData.addAll(json.items);
+	}
 }

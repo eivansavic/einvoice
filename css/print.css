@@ -2,6 +2,7 @@
 
 #print-pdf,
 #hiderow,
+#add-item-wrap,
 .delete {
 	display: none;
 }
