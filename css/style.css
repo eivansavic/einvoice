@@ -51,7 +51,7 @@ table th {
 }
 
 #number-1 {
-	text-align: center;
+	padding-left: 35%;
 	height: 25px;
 	font: bold 35px Helvetica, Sans-Serif;
 	display: table;
@@ -68,7 +68,7 @@ table th {
 }
 
 #number-2 {
-	text-align: center;
+	padding-left: 40%;
 	height: 25px;
 	font: 15px Helvetica, Sans-Serif;
 	display: table;
@@ -86,10 +86,6 @@ table th {
 
 #number-part {
 	display: table-cell;
-}
-
-#number {
-	text-align: center;
 }
 
 #customer {
@@ -133,49 +129,63 @@ table th {
 #items th {
 	background: #eee;
 }
+
 #items textarea {
 	width: 80px;
 	height: 50px;
 }
+#items input {
+	text-align: center;
+}
+
 #items tr.item-row td {
 	border: 0;
-	vertical-align: top;
+	text-align: center;
+	height: 30px;
 }
-#items td.description {
+
+#items td.item-code {
+	width: 50px;
+}
+#items td.item-code input {
+	width: 50px;
+}
+
+#items td.item-name {
 	width: 300px;
 }
-#items td.item-name {
-	width: 175px;
+#items td.item-name input {
+	height: 40px;
+	width: 100%;
+	background-color: #eee;
 }
-#items td.description textarea,
-#items td.item-name textarea {
+
+#items td.item-cost input {
 	width: 100%;
 }
-#items td.total-line {
-	border-right: 0;
-	text-align: right;
+
+#items td.item-quantity {
+	width: 50px;
 }
+#items td.item-quantity input {
+	width: 100%;
+}
+
+#items td.item-price {
+	width: 100px;
+}
+
 #items td.total-value {
 	border-left: 0;
 	padding: 10px;
+	background: #eee;
 }
 #items td.total-value textarea {
 	height: 20px;
-	background: none;
-}
-#items td.balance {
-	background: #eee;
-}
-#items td.blank {
-	border: 0;
 }
 
-textarea:hover,
-textarea:focus,
-#items td.total-value textarea:hover,
-#items td.total-value textarea:focus {
-	background-color: #e7e7e7;
-	color: black;
+#items td.blank {
+	border: 0;
 }
 
 .delete:hover {
@@ -229,4 +239,14 @@ textarea:focus,
 
 #add-item-btn {
 	background-color: #008cba;
+}
+
+.scrolable {
+	margin: 5px;
+	padding: 5px;
+	background-color: green;
+	width: 500px;
+	height: 110px;
+	overflow: auto;
+	text-align: justify;
 }

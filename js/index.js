@@ -72,45 +72,23 @@ function roundNumber(number, decimals) {
 
 function update_total() {
 	var total = 0;
-	$(".price").each(function(i) {
-		price = $(this)
-			.html()
-			.replace("$", "");
+	$(".price").each(function (i) {
+		price = $(this).html();
 		if (!isNaN(price)) total += Number(price);
 	});
 
 	total = roundNumber(total, 2);
 
-	$("#subtotal").html("$" + total);
-	$("#total").html("$" + total);
-
-	update_balance();
-}
-
-function update_balance() {
-	var due =
-		$("#total")
-			.html()
-			.replace("$", "") -
-		$("#paid")
-			.val()
-			.replace("$", "");
-	due = roundNumber(due, 2);
-
-	$(".due").html("$" + due);
+	$("#total").html(total);
 }
 
 function update_price() {
 	var row = $(this).parents(".item-row");
-	var price =
-		row
-			.find(".cost")
-			.val()
-			.replace("$", "") * row.find(".qty").val();
+	var price = row.find(".cost").val() * row.find(".qty").val();
 	price = roundNumber(price, 2);
 	isNaN(price)
 		? row.find(".price").html("N/A")
-		: row.find(".price").html("$" + price);
+		: row.find(".price").html(price);
 
 	update_total();
 }
@@ -120,50 +98,69 @@ function bind() {
 	$(".qty").blur(update_price);
 }
 
-$(document).ready(function() {
-	$("#print").click(function() {
+$(document).ready(function () {
+	$("#print").click(function () {
 		print();
 	});
 
-	$("input").click(function() {
+	$("input").click(function () {
 		$(this).select();
 	});
 
-	$("#paid").blur(update_balance);
+	$("#paid").blur(update_total);
 
-	$("#addrow").click(function() {
-		$(".item-row:last").after(
-			'<tr class="item-row"><td class="item-name"><div class="delete-wpr"><textarea>Item Name</textarea><a class="delete" href="javascript:;" title="Remove row">X</a></div></td><td class="description"><textarea>Description</textarea></td><td><textarea class="cost">$0</textarea></td><td><textarea class="qty">0</textarea></td><td><span class="price">$0</span></td></tr>'
-		);
+	$("#addrow").click(function () {
+		$(".item-row:last").after(getRowItem());
 		if ($(".delete").length > 0) $(".delete").show();
 		bind();
 	});
 
 	bind();
 
-	$(".delete").live("click", function() {
-		$(this)
-			.parents(".item-row")
-			.remove();
+	$(".delete").live("click", function () {
+		$(this).parents(".item-row").remove();
 		update_total();
 		if ($(".delete").length < 2) $(".delete").hide();
 	});
 
-	$("#cancel-logo").click(function() {
+	$("#cancel-logo").click(function () {
 		$("#logo").removeClass("edit");
 	});
-	$("#delete-logo").click(function() {
+	$("#delete-logo").click(function () {
 		$("#logo").remove();
 	});
-	$("#change-logo").click(function() {
+	$("#change-logo").click(function () {
 		$("#logo").addClass("edit");
 		$("#imageloc").val($("#image").attr("src"));
 		$("#image").select();
 	});
-	$("#save-logo").click(function() {
+	$("#save-logo").click(function () {
 		$("#image").attr("src", $("#imageloc").val());
 		$("#logo").removeClass("edit");
 	});
 
 	$("#date").val(print_today());
 });
+
+function getRowItem(item) {
+	return `
+	<tr class="item-row">
+					<td class="item-code">
+						<div class="delete-wpr">
+							<input type="number" value="${item ? item.code : ""}"/>
+							<a class="delete" href="javascript:;" title="Remove row">X</a>
+						</div>
+					</td>
+					<td class="item-name">
+					<input type="text" name="item" list="item-list" value="${
+						item ? item.name : ""
+					}">
+					</td>
+					<td class="item-cost"><textarea class="cost">${
+						item ? item.price : "0.00"
+					}</textarea></td>
+					<td class="item-quantity"><input class="qty" type="number" value="1"/></td>
+					<td class="item-price"><span class="price">0.00</span></td>
+				</tr>
+`;
+}

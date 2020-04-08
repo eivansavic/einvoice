@@ -1,8 +1,12 @@
 @import "style.css";
 
+#items td.item-name input {
+	background-color: white;
+}
+
+#add-item-btn,
 #print-pdf,
 #hiderow,
-#add-item-wrap,
 .delete {
 	display: none;
 }

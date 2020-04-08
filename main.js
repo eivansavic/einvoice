@@ -7,8 +7,6 @@ const DataStore = require("./DataStore");
 const fs = require("fs");
 const os = require("os");
 
-// require("electron-reload")(__dirname);
-
 const RESOURCE_PATH = os.tmpdir();
 
 let mainWindow;
@@ -120,3 +118,5 @@ function loadData() {
 		itemsData.addAll(json.items);
 	}
 }
+
+module.exports.items = itemsData.getAll().items;
