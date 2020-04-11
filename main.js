@@ -99,6 +99,7 @@ function main() {
 	ipcMain.on("add-item", (event, item) => {
 		const updatedItems = itemsData.add(item).items;
 		itemsWindow.send("items", updatedItems);
+		mainWindow.send("reload-items");
 	});
 
 	ipcMain.on("delete-item", (event, item) => {

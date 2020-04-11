@@ -18,9 +18,9 @@ ipcRenderer.on("wrote-pdf", function (event, path) {
 	// document.getElementById("pdf-path").innerHTML = message;
 });
 
-const deleteItem = (e) => {
-	ipcRenderer.send("delete-item", e.target.textContent);
-};
+ipcRenderer.on("reload-items", function (event, path) {
+	loadItems();
+});
 
 document.getElementById("add-item-btn").addEventListener("click", () => {
 	ipcRenderer.send("add-item-window");
@@ -98,6 +98,17 @@ function roundNumber(number, decimals) {
 	return newString; // Output the result to the form field (change for your purposes)
 }
 
+function update_price() {
+	var row = $(this).parents(".item-row");
+	var price = row.find(".cost").val() * row.find(".qty").val();
+	price = roundNumber(price, 2);
+	isNaN(price)
+		? row.find(".price").html("N/A")
+		: row.find(".price").html(price);
+
+	update_total();
+}
+
 function update_total() {
 	var total = 0;
 	$(".price").each(function (i) {
@@ -110,23 +121,13 @@ function update_total() {
 	$("#total").html(total);
 }
 
-function update_price() {
-	var row = $(this).parents(".item-row");
-	var price = row.find(".cost").val() * row.find(".qty").val();
-	price = roundNumber(price, 2);
-	isNaN(price)
-		? row.find(".price").html("N/A")
-		: row.find(".price").html(price);
-
-	update_total();
-}
-
 function bind() {
 	$(".cost").blur(update_price);
 	$(".qty").blur(update_price);
 }
 
 let index = 0;
+let rowIndex = 0;
 $(document).ready(function () {
 	$("#print").click(function () {
 		print();
@@ -138,6 +139,7 @@ $(document).ready(function () {
 
 	$("#addrow").click(function () {
 		index = index + 1;
+		rowIndex = rowIndex + 1;
 		let last = $(".item-row:last");
 		let item = getRowItem(index, null);
 		if (last.length > 0) {
@@ -160,12 +162,41 @@ $(document).ready(function () {
 	});
 
 	$("#date").val(print_today());
+
+	$(".tooltip-input").live("change", function () {
+		let row = $(this).closest("tr");
+		let value = $(this).val();
+
+		let selectedItem;
+		if (value && value.length > 0) {
+			let filteredItems = items.filter(
+				(item) => item.name === value.trim()
+			);
+			if (filteredItems.length > 0) {
+				selectedItem = filteredItems[0];
+			}
+		}
+
+		if (selectedItem) {
+			let cost = roundNumber(selectedItem.price, 2);
+			let price = roundNumber(cost * row.find("input.qty").val(), 2);
+			row.find("span.tooltiptext").html(selectedItem.code);
+			row.find("input.cost").val(cost);
+			row.find("span.price").html(price);
+			update_price();
+		} else {
+			row.find("span.tooltiptext").html("");
+			row.find("input.cost").val("0.00");
+			row.find("span.price").html("0.00");
+			update_price();
+		}
+	});
 });
 
 function getRowItem(index, item) {
 	loadItems();
 	return `
-	<tr class="item-row">
+				<tr class="item-row">
 					<td class="item-code">
 						<div class="delete-wpr">
 							<input type="number" value="${index}"/>
@@ -175,7 +206,7 @@ function getRowItem(index, item) {
 					<td class="item-name">
 						${getNameInput(item, index)}
 					</td>
-					<td class="item-quantity"><input class="cost" type="number" value="${
+					<td class="item-cost"><input class="cost" type="number" value="${
 						item ? item.price : "0.00"
 					}"/></td>
 					<td class="item-quantity"><input class="qty" type="number" value="1"/></td>
@@ -185,20 +216,25 @@ function getRowItem(index, item) {
 }
 
 function getNameInput(item, index) {
-	const input = `<input type="text" name="item" list="item-list-${index}" value="${
+	const input = `
+	<div class="tooltip"><input class="tooltip-input" title="" type="text" name="item" id="item-${rowIndex}" list="item-list-${index}" value="${
 		item ? item.name : ""
-	}">`;
+	}">	
+  <span class="tooltiptext"></span>
+</div>`;
 	let options = "";
 	for (let item of items) {
 		options = options + `\n<option value="${item.name}">`;
 	}
 	return (
 		input +
-		`<datalist id="item-list-${index}">
-			<div class="scrolable">
-				${options}
-			</div>
-		</datalist>`
+		`<div class="scrolable-wrapper">
+			<datalist id="item-list-${index}">
+				<div class="scrolable">
+					${options}
+				</div>
+			</datalist> 
+		</div>`
 	);
 }
 
