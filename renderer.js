@@ -200,7 +200,7 @@ function getRowItem(index, item) {
 					<td class="item-code">
 						<div class="delete-wpr">
 							<input type="number" value="${index}"/>
-							<a class="delete" href="javascript:;" title="Remove row">X</a>
+							<a class="delete" href="javascript:;" title="Obriši">X</a>
 						</div>
 					</td>
 					<td class="item-name">

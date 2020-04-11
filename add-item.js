@@ -45,14 +45,14 @@ function load() {
 			const codeInput = event.target[0];
 			let code = codeInput.value;
 			if (code.length === 0) {
-				alert("Sifra je obavezna!");
+				alert("Šifra je obavezna!");
 				return;
 			}
 
 			code = parseInt(code);
 			for (const item of items) {
 				if (item.code == code) {
-					alert("Uneta sifra vec postoji!");
+					alert("Uneta šifra već postoji!");
 					return;
 				}
 			}
