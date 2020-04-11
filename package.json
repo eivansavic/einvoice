@@ -1,12 +1,11 @@
 {
-	"name": "electron-quick-start",
+	"name": "eInvoice",
 	"version": "1.0.0",
-	"description": "A minimal Electron application",
+	"description": "Invoice Application",
 	"main": "main.js",
 	"scripts": {
 		"start": "electron ."
 	},
-	"repository": "https://github.com/electron/electron-quick-start",
 	"keywords": [
 		"Electron",
 		"quick",
@@ -14,7 +13,7 @@
 		"tutorial",
 		"demo"
 	],
-	"author": "GitHub",
+	"author": "Ivan Savic",
 	"license": "CC0-1.0",
 	"dependencies": {
 		"core-util-is": "^1.0.2",
