@@ -103,8 +103,8 @@ function update_price() {
 	var price = row.find(".cost").val() * row.find(".qty").val();
 	price = roundNumber(price, 2);
 	isNaN(price)
-		? row.find(".price").html("N/A")
-		: row.find(".price").html(price);
+		? row.find(".price").val("N/A")
+		: row.find(".price").val(price);
 
 	update_total();
 }
@@ -112,13 +112,13 @@ function update_price() {
 function update_total() {
 	var total = 0;
 	$(".price").each(function (i) {
-		price = $(this).html();
+		price = $(this).val();
 		if (!isNaN(price)) total += Number(price);
 	});
 
 	total = roundNumber(total, 2);
 
-	$("#total").html(total);
+	$("#total").val(total);
 }
 
 function bind() {
@@ -182,12 +182,12 @@ $(document).ready(function () {
 			let price = roundNumber(cost * row.find("input.qty").val(), 2);
 			row.find("span.tooltiptext").html(selectedItem.code);
 			row.find("input.cost").val(cost);
-			row.find("span.price").html(price);
+			row.find("input.price").val(price);
 			update_price();
 		} else {
 			row.find("span.tooltiptext").html("");
 			row.find("input.cost").val("0.00");
-			row.find("span.price").html("0.00");
+			row.find("input.price").val("0.00");
 			update_price();
 		}
 	});
@@ -210,7 +210,7 @@ function getRowItem(index, item) {
 						item ? item.price : "0.00"
 					}"/></td>
 					<td class="item-quantity"><input class="qty" type="number" value="1"/></td>
-					<td class="item-price"><span class="price">0.00</span></td>
+					<td class="item-price"><input type="number" class="price" value="0.00" disabled/></td>
 				</tr>
 `;
 }
