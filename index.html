@@ -2,14 +2,6 @@
 <html>
 	<head>
 		<meta charset="UTF-8" />
-		<!-- <meta
-			http-equiv="Content-Security-Policy"
-			content="default-src 'self'; script-src 'self'"
-		/>
-		<meta
-			http-equiv="X-Content-Security-Policy"
-			content="default-src 'self'; script-src 'self'"
-		/> -->
 		<title>eInvoice</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<link rel="stylesheet" type="text/css" href="css/print.css" media="print" />
@@ -18,10 +10,10 @@
 	<body>
   <body>
 		<div id="page-wrap">
-			<div id="title">STZR I AUTOSERVIS NAČA</div>
+			<div id="title">SZTR I AUTOSERVIS NAČA</div>
 
 			<div id="company">
-				<p><b>Goran Nača PR, STZR i autoservis NAČA</b></p>
+				<p><b>Gabor Nača PR, SZTR i autoservis NAČA</b></p>
 				<p>Ibarska 2</p>
 				<p>21000, Novi Sad</p>
 				<p>PIB: 106230547</p>
@@ -42,7 +34,7 @@
 				<table id="customer-payment" style="border-width: 1px;">
 					<tr>
 						<td class="meta-head">Datum izdavanja računa:</td>
-						<td><input type="date" id="date" name="date"></input></td>
+						<td><input type="text" class="date" id="date1"></input></td>
 					</tr>
 					<tr>
 						<td class="meta-head">Mesto izdavanja računa:</td>
@@ -50,7 +42,7 @@
 					</tr>
 					<tr>
 						<td class="meta-head">Datum prometa dobara/usluga:</td>
-						<td><input type="date" id="traffic-date" name="traffic-date"></input></td>
+						<td><input type="text" class="date" id="date2"></input></td>
 					</tr>
 					<tr>
 						<td class="meta-head">Mesto prometa dobara/usluga:</td>
@@ -58,13 +50,13 @@
 					</tr>
 					<tr>
 						<td class="meta-head">Valuta plaćanja:</td>
-						<td><input type="text" id="currency" name="currency" value="RSD"></input></td>
+						<td><input type="text" class="date" id="date3" name="date"></input></td>
 					</tr>
 				</table>
 
 				<table id="customer-info">
 					<tr>
-						<td class="meta-head">Kupac:</td>
+						<td class="meta-head" style="width:100px">Kupac:</td>
 						<td><input type="text" id="customer-name" name="customer-name"></input></td>
 					</tr>
 					<tr>
@@ -76,12 +68,16 @@
 						<td><input type="text" id="customer-place" name="customer-place"></input></td>
 					</tr>
 					<tr>
-						<td class="meta-head">PIB:</td>
+						<td class="meta-head"><input class="empty-input" type="text" value="Vozilo:"></td>
 						<td><input type="text" id="customer-pib" name="customer-pib"></input></td>
 					</tr>
 					<tr>
-						<td class="meta-head">Broj štete:</td>
+						<td class="meta-head"><input class="empty-input" type="text" value="Broj štete:"></td>
 						<td><input type="text" id="customer-numbers" name="customer-numbers"></input></td>
+					</tr>
+					<tr>
+						<td class="meta-head"><input class="empty-input" type="text" value=""></td>
+						<td><input type="text" id="customer-other" name="customer-other"></input></td>
 					</tr>
 				</table>
 			</div >
@@ -103,7 +99,7 @@
 
 				<tr>
 					<td colspan="2" class="blank"></td>
-					<td colspan="2" class="total-line">Ukupan račun</td>
+					<td colspan="2" class="total-line"><b>Ukupan iznos za uplatu</b></td>
 					<td class="total-value">
 						<input type="number" id="total" value="0.00" disabled/>
 					</td>
@@ -114,7 +110,49 @@
 				<button id="add-item-btn">Stavke</button>
 				<button id="print-pdf">Štampaj</button>
 			</div>
-    	</div>
-    	<script src="./renderer.js"></script>
+		</div>
+		
+		<div id="footer1">
+			<p>Valuta: <span id="footer-price"></span>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				Poziv na broj: <span id="footer-number"></span></p>
+		</div>
+
+		<div id="footer2">
+			<p>- Napomena o poreskom oslobađanju: <b>NEMA</b></p>
+			<p>- Reklamacije se primaju u roku od 3 dana</p>
+			<p>- Ovlašćeno lice Gabor Nača, JMBG: 2905980800105, Tel: 0652290100</p>
+			<p>- GABOR NAČA PR, SZTR I AUTOSERVIS NAČA, NIJE U SISTEMU PDV-A</p>
+		</div>
+
+		<div id="signature">
+			<span class="signature-first">_____________________________________</span>
+			<span class="signature-second">_____________________________________</span>
+			<br/>
+			<span class="signature-first">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Fakturisao
+			</span>
+			<span class="signature-second">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				Vozilo preuzeo
+			</span>
+		</div>
+		<div id="signature2">
+			<span class="signature-third">_____________________________________</span>
+			<br/>
+			<span class="signature-third">
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Broj LK 
+			</span>
+		</div>
+		<script src="./renderer.js"></script>
 	</body>
 </html>

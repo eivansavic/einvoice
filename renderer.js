@@ -1,5 +1,4 @@
 const { ipcRenderer } = require("electron");
-const fs = require("fs");
 
 const DataStore = require("./DataStore");
 
@@ -13,10 +12,7 @@ printPDFButton.addEventListener("click", function (event) {
 	ipcRenderer.send("print-to-pdf");
 });
 
-ipcRenderer.on("wrote-pdf", function (event, path) {
-	console.log(path);
-	// document.getElementById("pdf-path").innerHTML = message;
-});
+ipcRenderer.on("wrote-pdf", function (event, path) {});
 
 ipcRenderer.on("reload-items", function (event, path) {
 	loadItems();
@@ -26,29 +22,11 @@ document.getElementById("add-item-btn").addEventListener("click", () => {
 	ipcRenderer.send("add-item-window");
 });
 
-function print_today() {
-	var now = new Date();
-	var months = new Array(
-		"January",
-		"February",
-		"March",
-		"April",
-		"May",
-		"June",
-		"July",
-		"August",
-		"September",
-		"October",
-		"November",
-		"December"
-	);
-	var date = (now.getDate() < 10 ? "0" : "") + now.getDate();
-	function fourdigits(number) {
-		return number < 1000 ? number + 1900 : number;
-	}
-	var today =
-		months[now.getMonth()] + " " + date + ", " + fourdigits(now.getYear());
-	return today;
+function getToday() {
+	let now = new Date();
+	let day = (now.getDate() < 10 ? "0" : "") + now.getDate();
+	let month = (now.getMonth() + 1 < 10 ? "0" : "") + (now.getMonth() + 1);
+	return `${day}.${month}.${now.getFullYear()}.`;
 }
 
 function roundNumber(number, decimals) {
@@ -119,6 +97,7 @@ function update_total() {
 	total = roundNumber(total, 2);
 
 	$("#total").val(total);
+	$("#footer-price").html(total + " RSD");
 }
 
 function bind() {
@@ -135,6 +114,10 @@ $(document).ready(function () {
 
 	$("input").click(function () {
 		$(this).select();
+	});
+
+	$("#number").live("change", function () {
+		$("#footer-number").html($(this).val());
 	});
 
 	$("#addrow").click(function () {
@@ -161,7 +144,7 @@ $(document).ready(function () {
 		if ($(".delete").length == 0) $(".delete").hide();
 	});
 
-	$("#date").val(print_today());
+	$(".date").val(getToday());
 
 	$(".tooltip-input").live("change", function () {
 		let row = $(this).closest("tr");
