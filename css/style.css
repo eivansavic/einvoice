@@ -320,26 +320,28 @@ table th {
 
 #footer2 {
 	padding-left: 40px;
-	padding-top: 50px;
+	padding-top: 60px;
+	padding-bottom: 100px;
 }
 
-#signature {
-	padding-top: 150px;
+
+.signature-table {
+	margin-top: 80px;
+	margin-left: 50px;
+	text-align: center;
+	width: 900px;
+	border: 0px solid;
 }
 
-.signature-first {
-	padding-left: 50px;
+.signature-table td {
+	width: 300px;
+	border: none;
 }
 
-.signature-second {
-	padding-left: 250px;
+.signature-table .td-1 {
+	border-bottom: 1px solid;
 }
 
-#signature2 {
-	padding-top: 90px;
-}
-
-.signature-third {
-	padding-top: 50px;
-	padding-left: 617px;
+.signature-table .td-3 {
+	border-bottom: 1px solid;
 }
