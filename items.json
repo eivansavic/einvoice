@@ -924,6 +924,71 @@
 			"code": 214,
 			"name": "Zaštitna lajsna blatobrana",
 			"price": 0
-		}
+		},
+		{
+			"code": 215,
+			"name": "Uvodnik vazduha",
+			"price": 0
+		},
+		{
+			"code": 231,
+			"name": "Zaptivka",
+			"price": 11800
+		},
+		{
+            "code": 232,
+            "name": "Obloga",
+            "price": 6000
+		},
+		{
+            "code": 233,
+            "name": "Potrošni materijal",
+            "price": 0
+		},
+		{
+            "code": 234,
+            "name": "Usluga farbanja",
+            "price": 2000
+		},
+		{
+            "code": 235,
+            "name": "Šolja amortizera",
+            "price": 4800
+		},
+		{
+            "code": 236,
+            "name": "Šina",
+            "price": 0
+		},
+		{
+            "code": 237,
+            "name": "Šolja amortizera",
+            "price": 0
+		},
+		{
+            "code": 238,
+            "name": "Rikverc svetlo",
+            "price": 0
+		},
+		{
+            "code": 239,
+            "name": "Un. štop svetlo",
+            "price": 0
+		},
+        {
+            "code": 240,
+            "name": "Rikverc svetlo",
+            "price": 0
+        },
+        {
+            "code": 241,
+            "name": "Ukrasna lajsna blatobrana",
+            "price": 0
+        },
+        {
+            "code": 242,
+            "name": "Spoljni brzac branika",
+            "price": 0
+        }
 	]
 }
