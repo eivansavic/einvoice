@@ -1,3 +1,6 @@
 node_modules
 eInvoice-win32-x64
 eInvoice-win32-x64.zip
+.DS_Store
+.vscode/
+eInvoice-darwin-x64/

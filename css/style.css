@@ -1,347 +1,348 @@
 * {
-	margin: 0;
-	padding: 0;
+  margin: 0;
+  padding: 0;
 }
 body {
-	font: 17px Georgia, serif;
+  font: 17px Georgia, serif;
 }
 #page-wrap {
-	width: 1000px;
-	margin: 0 auto;
+  width: 1000px;
+  margin: 0 auto;
 }
 
 input {
-	border: none;
-	font-size: 17px;
+  border: none;
+  font-size: 17px;
 }
 
 textarea {
-	border: 0;
-	font: 17px Georgia, Serif;
-	overflow: hidden;
-	resize: none;
+  border: 0;
+  font: 17px Georgia, Serif;
+  overflow: hidden;
+  resize: none;
 }
 table {
-	border-collapse: collapse;
+  border-collapse: collapse;
 }
 table td,
 table th {
-	border: 1px solid;
-	padding: 5px;
+  border: 1px solid;
+  padding: 5px;
 }
 
 #title {
-	height: 17px;
-	width: 100%;
-	margin: 17px 0;
-	background: #222;
-	text-align: center;
-	color: white;
-	font: bold 17px Helvetica, Sans-Serif;
-	text-decoration: uppercase;
-	letter-spacing: 8px;
-	padding: 8px 0px;
+  height: 17px;
+  width: 100%;
+  margin: 17px 0;
+  background: #222;
+  text-align: center;
+  color: white;
+  font: bold 17px Helvetica, Sans-Serif;
+  text-decoration: uppercase;
+  letter-spacing: 8px;
+  padding: 8px 0px;
 }
 
 #company {
-	font: 18px Helvetica, Sans-Serif;
-	width: auto;
-	height: 150px;
-	float: left;
-	padding-bottom: 10px;
+  font: 18px Helvetica, Sans-Serif;
+  width: auto;
+  height: 150px;
+  float: left;
+  padding-bottom: 10px;
 }
 
 #number-1 {
-	padding-left: 35%;
-	height: 30px;
-	font: bold 35px Helvetica, Sans-Serif;
-	display: table;
-	width: 100%;
-	table-layout: fixed;
-	padding-bottom: 10px;
+  padding-left: 35%;
+  height: 30px;
+  font: bold 35px Helvetica, Sans-Serif;
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  padding-bottom: 10px;
 }
 
 #number {
-	width: 300px;
-	height: 100%;
-	font: 35px Helvetica, Sans-Serif;
-	border-style: none;
+  width: 300px;
+  height: 100%;
+  font: 35px Helvetica, Sans-Serif;
+  border-style: none;
 }
 
 #number-2 {
-	padding-left: 40%;
-	height: 25px;
-	font: 17px Helvetica, Sans-Serif;
-	display: table;
-	width: 100%;
-	table-layout: fixed;
-	padding-bottom: 30px;
+  padding-left: 40%;
+  height: 25px;
+  font: 17px Helvetica, Sans-Serif;
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  padding-bottom: 30px;
 }
 
 #fiscal {
-	width: 150px;
-	height: 25px;
-	font: 17px Helvetica, Sans-Serif;
-	border-style: none;
+  width: 150px;
+  height: 25px;
+  font: 17px Helvetica, Sans-Serif;
+  border-style: none;
 }
 
 #number-part {
-	display: table-cell;
+  display: table-cell;
 }
 
 #customer {
-	font: 17px Helvetica, Sans-Serif;
-	overflow: hidden;
+  font: 17px Helvetica, Sans-Serif;
+  overflow: hidden;
 }
 
 #customer td {
-	text-align: right;
+  text-align: right;
 }
 
 #customer input {
-	font: 17px Helvetica, Sans-Serif;
-	width: 100%;
-	float: left;
+  font: 17px Helvetica, Sans-Serif;
+  width: 100%;
+  float: left;
 }
 
 #customer td.meta-head {
-	text-align: left;
-	background: #eee;
+  text-align: left;
+  background: #eee;
 }
 
 #customer-payment {
-	margin-top: 1px;
-	width: 450px;
-	float: left;
+  margin-top: 1px;
+  width: 450px;
+  float: left;
 }
 
 #customer-info {
-	margin-top: 1px;
-	width: 500px;
-	float: right;
+  margin-top: 1px;
+  width: 500px;
+  float: right;
 }
 
 #items {
-	clear: both;
-	width: 100%;
-	margin: 30px 0 0 0;
-	border: 1px solid;
+  clear: both;
+  width: 100%;
+  margin: 30px 0 0 0;
+  border: 1px solid;
 }
 #items th {
-	background: #eee;
+  background: #eee;
 }
 
 #items textarea {
-	width: 80px;
-	height: 50px;
+  width: 80px;
+  height: 50px;
 }
 #items input {
-	text-align: center;
+  text-align: center;
 }
 
 #items tr.item-row td {
-	border: 0;
-	text-align: center;
-	height: 30px;
+  border: 0;
+  text-align: center;
+  height: 30px;
 }
 
 #items td.item-code {
-	width: 50px;
+  width: 50px;
 }
 #items td.item-code input {
-	width: 50px;
+  width: 50px;
 }
 
 #items td.item-name {
-	width: 500px;
+  width: 500px;
 }
 #items td.item-name input {
-	height: 40px;
-	width: 100%;
-	background-color: #eee;
+  height: 40px;
+  width: 100%;
+  background-color: #eee;
 }
 
 #items td.item-cost {
-	width: 180px;
+  width: 180px;
 }
 
 #items td.item-cost input {
-	width: 100%;
+  width: 100%;
 }
 
 #items td.item-quantity {
-	width: 40px;
+  width: 40px;
 }
 #items td.item-quantity input {
-	width: 100%;
+  width: 100%;
 }
 
 #items td.item-price {
-	width: 50px;
+  width: 50px;
 }
 
 #items td.total-value {
-	text-align: center;
-	border-left: 0;
-	padding: 10px;
-	background: #eee;
+  text-align: center;
+  border-left: 0;
+  padding: 10px;
+  background: #eee;
 }
 
 .total-line {
-	text-align: center;
+  text-align: center;
 }
 
 .price {
-	background-color: white;
+  background-color: white;
 }
 
-#total {
-	font-weight: bold;
-	background-color: #eee;
+#total,
+#totalPdv,
+#pdv {
+  font-weight: bold;
+  background-color: #eee;
 }
 
 .empty-input {
-	background-color: #eee;
-	color: black;
+  background-color: #eee;
+  color: black;
 }
 
 #items td.total-value textarea {
-	height: 17px;
+  height: 17px;
 }
 
 #items td.blank {
-	border: 0;
+  border: 0;
 }
 
 .delete:hover {
-	background-color: #f44336;
+  background-color: #f44336;
 }
 
 .delete-wpr {
-	position: relative;
+  position: relative;
 }
 .delete {
-	display: block;
-	color: #000;
-	text-decoration: none;
-	position: absolute;
-	background: #eeeeee;
-	font-weight: bold;
-	padding: 0px 3px;
-	border: 1px solid;
-	top: -6px;
-	left: -22px;
-	font-family: Verdana;
-	font-size: 17px;
+  display: block;
+  color: #000;
+  text-decoration: none;
+  position: absolute;
+  background: #eeeeee;
+  font-weight: bold;
+  padding: 0px 3px;
+  border: 1px solid;
+  top: -6px;
+  left: -22px;
+  font-family: Verdana;
+  font-size: 17px;
 }
 
 #pdf-button {
-	text-align: right;
-	padding-top: 5px;
+  text-align: right;
+  padding-top: 5px;
 }
 
 #add-item-wrap {
-	text-align: right;
-	padding-top: 5px;
+  text-align: right;
+  padding-top: 5px;
 }
 
 #add-item-btn,
 #print-pdf,
 #addrow {
-	background-color: #9e5e09;
-	border: none;
-	color: white;
-	padding: 17px 32px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 17px;
+  background-color: #9e5e09;
+  border: none;
+  color: white;
+  padding: 17px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 17px;
 }
 
 #addrow {
-	background-color: #4caf50;
+  background-color: #4caf50;
 }
 
 #add-item-btn {
-	background-color: #008cba;
+  background-color: #008cba;
 }
 
 .scrolable {
-	margin: 5px;
-	padding: 5px;
-	background-color: green;
-	width: 500px;
-	height: 110px;
-	overflow: auto;
-	text-align: justify;
+  margin: 5px;
+  padding: 5px;
+  background-color: green;
+  width: 500px;
+  height: 110px;
+  overflow: auto;
+  text-align: justify;
 }
 
 .tooltip {
-	position: relative;
+  position: relative;
 }
 
 .tooltip .tooltiptext {
-	visibility: hidden;
-	width: 117px;
-	background-color: #555;
-	color: #fff;
-	text-align: center;
-	border-radius: 6px;
-	padding: 5px 0;
-	position: absolute;
-	z-index: 1;
-	bottom: 125%;
-	left: 50%;
-	margin-left: -60px;
-	opacity: 0;
-	transition: opacity 0.3s;
+  visibility: hidden;
+  width: 117px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
 }
 
 .tooltip .tooltiptext::after {
-	content: "";
-	position: absolute;
-	top: 100%;
-	left: 50%;
-	margin-left: -5px;
-	border-width: 5px;
-	border-style: solid;
-	border-color: #555 transparent transparent transparent;
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
 }
 
 .tooltip:hover .tooltiptext {
-	visibility: visible;
-	opacity: 1;
+  visibility: visible;
+  opacity: 1;
 }
 
 #footer1 {
-	padding-left: 200px;
-	padding-top: 20px;
+  padding-left: 200px;
+  padding-top: 20px;
 }
 
 #footer2 {
-	padding-left: 40px;
-	padding-top: 60px;
-	padding-bottom: 100px;
+  padding-left: 40px;
+  padding-top: 60px;
+  padding-bottom: 100px;
 }
 
-
 .signature-table {
-	margin-top: 80px;
-	margin-left: 50px;
-	text-align: center;
-	width: 900px;
-	border: 0px solid;
+  margin-top: 80px;
+  margin-left: 50px;
+  text-align: center;
+  width: 900px;
+  border: 0px solid;
 }
 
 .signature-table td {
-	width: 300px;
-	border: none;
+  width: 300px;
+  border: none;
 }
 
 .signature-table .td-1 {
-	border-bottom: 1px solid;
+  border-bottom: 1px solid;
 }
 
 .signature-table .td-3 {
-	border-bottom: 1px solid;
+  border-bottom: 1px solid;
 }
