@@ -30,6 +30,7 @@ function getToday() {
 }
 
 function roundNumber(number, decimals) {
+  if (!number) return number;
   var newString; // The new rounded number
   decimals = Number(decimals);
   if (decimals < 1) {
@@ -78,28 +79,51 @@ function roundNumber(number, decimals) {
 
 function update_price() {
   var row = $(this).parents(".item-row");
-  var price = row.find(".cost").val() * row.find(".qty").val();
+
+  var singlePrice = row.find(".cost").val();
+
+  row.find(".cost").val(roundNumber(singlePrice, 2));
+
+  var price = singlePrice * row.find(".qty").val();
   price = roundNumber(price, 2);
   isNaN(price) ? row.find(".price").val("N/A") : row.find(".price").val(price);
+
+  let pdvMultiplier = (20 * 100) / (20 + 100) / 100;
+  let pdv = roundNumber(singlePrice * pdvMultiplier, 2);
+  let basePrice = roundNumber(singlePrice - pdv, 2);
+  row.find(".basePrice").val(basePrice);
+  row.find(".pdvValue").val(pdv);
 
   update_total();
 }
 
 function update_total() {
-  var total = 0;
-  $(".price").each(function (i) {
-    var price = $(this).val();
-    if (!isNaN(price)) total += Number(price);
+  var totalBasePrice = 0;
+  $(".basePrice").each(function (i) {
+    var price1 = $(this).val();
+    if (!isNaN(price1)) totalBasePrice += Number(price1);
   });
+  totalBasePrice = roundNumber(totalBasePrice, 2);
 
-  total = roundNumber(total, 2);
-  var totalPdv = roundNumber(total * 1.2, 2);
-  var pdv = roundNumber(totalPdv - total, 2);
+  var totalPdv = 0;
+  $(".pdvValue").each(function (i) {
+    var price2 = $(this).val();
+    if (!isNaN(price2)) totalPdv += Number(price2);
+  });
+  totalPdv = roundNumber(totalPdv, 2);
 
-  $("#total").val(total);
-  $("#pdv").val(pdv);
+  var totalPrice = 0;
+  $(".price").each(function (i) {
+    var price3 = $(this).val();
+    if (!isNaN(price3)) totalPrice += Number(price3);
+  });
+  totalPrice = roundNumber(totalPrice, 2);
+
+  $("#total").val(totalBasePrice);
   $("#totalPdv").val(totalPdv);
-  $("#footer-price").html(totalPdv + " RSD");
+  $("#totalPrice").val(totalPrice);
+
+  $("#footer-price").html(totalPrice + " RSD");
 }
 
 function bind() {
@@ -161,6 +185,12 @@ $(document).ready(function () {
     }
 
     if (selectedItem) {
+      let pdvMultiplier = (20 * 100) / (20 + 100) / 100;
+      let pdv = roundNumber(selectedItem.price * pdvMultiplier, 2);
+      let basePrice = roundNumber(selectedItem.price - pdv, 2);
+      row.find("input.basePrice").val(basePrice);
+      row.find("input.pdvValue").val(pdv);
+
       let cost = roundNumber(selectedItem.price, 2);
       let price = roundNumber(cost * row.find("input.qty").val(), 2);
       row.find("span.tooltiptext").html(selectedItem.code);
@@ -192,7 +222,10 @@ function getRowItem(index, item) {
 					<td class="item-cost"><input class="cost" type="number" value="${
             item ? item.price : "0.00"
           }"/></td>
-					<td class="item-quantity"><input class="qty" type="number" value="1"/></td>
+          <td class="item-quantity"><input class="qty" type="number" value="1"/></td>
+          <td class="item-base-price"><input type="number" class="basePrice" value="0.00" disabled/></td>
+          <td class="item-pdv-percentage"><input type="number" class="pdvPercentage" value="20.00" disabled/></td>
+          <td class="item-pdv-value"><input type="number" class="pdvValue" value="0.00" disabled/></td>
 					<td class="item-price"><input type="number" class="price" value="0.00" disabled/></td>
 				</tr>
 `;

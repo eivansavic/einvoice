@@ -3,7 +3,7 @@
 		{
 			"code": 1,
 			"name": "Popravka blatobrana /1NČ",
-			"price": 11816.0
+			"price": 1000.0
 		},
 		{
 			"code": 2,
@@ -928,6 +928,76 @@
 		{
 			"code": 215,
 			"name": "Uvodnik vazduha",
+			"price": 0
+		},
+		{
+			"code": 216,
+			"name": "Drzac",
+			"price": 0
+		},
+		{
+			"code": 217,
+			"name": "Drzac blatobrana",
+			"price": 0
+		},
+		{
+			"code": 218,
+			"name": "Kuciste kompjutera",
+			"price": 0
+		},
+		{
+			"code": 220,
+			"name": "Drzac",
+			"price": 0
+		},
+		{
+			"code": 221,
+			"name": "Bocni drzac",
+			"price": 0
+		},
+		{
+			"code": 222,
+			"name": "Air bag vozaca",
+			"price": 0
+		},
+		{
+			"code": 223,
+			"name": "Air bag vozaca",
+			"price": 0
+		},
+		{
+			"code": 224,
+			"name": "Centrala air bag",
+			"price": 0
+		},
+		{
+			"code": 225,
+			"name": "Pojas",
+			"price": 0
+		},
+		{
+			"code": 226,
+			"name": "Drzac pop. nosaca",
+			"price": 0
+		},
+		{
+			"code": 227,
+			"name": "Spona",
+			"price": 0
+		},
+		{
+			"code": 228,
+			"name": "Glava spone",
+			"price": 0
+		},
+		{
+			"code": 229,
+			"name": "Armatura",
+			"price": 0
+		},
+		{
+			"code": 230,
+			"name": "Motoric za pranje stakala",
 			"price": 0
 		},
 		{

@@ -6,7 +6,7 @@ body {
   font: 17px Georgia, serif;
 }
 #page-wrap {
-  width: 1000px;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -100,7 +100,9 @@ table th {
 
 #customer input {
   font: 17px Helvetica, Sans-Serif;
-  width: 100%;
+  word-wrap: break-word;
+  word-break: break-all;
+  width: 95%;
   float: left;
 }
 
@@ -111,20 +113,20 @@ table th {
 
 #customer-payment {
   margin-top: 1px;
-  width: 450px;
+  width: 48%;
   float: left;
 }
 
 #customer-info {
   margin-top: 1px;
-  width: 500px;
+  width: 48%;
   float: right;
 }
 
 #items {
   clear: both;
   width: 100%;
-  margin: 30px 0 0 0;
+  margin-top: 30px;
   border: 1px solid;
 }
 #items th {
@@ -146,10 +148,10 @@ table th {
 }
 
 #items td.item-code {
-  width: 50px;
+  width: 30px;
 }
 #items td.item-code input {
-  width: 50px;
+  width: 100%;
 }
 
 #items td.item-name {
@@ -157,12 +159,12 @@ table th {
 }
 #items td.item-name input {
   height: 40px;
-  width: 100%;
+  width: 300px;
   background-color: #eee;
 }
 
 #items td.item-cost {
-  width: 180px;
+  width: 13%;
 }
 
 #items td.item-cost input {
@@ -170,17 +172,47 @@ table th {
 }
 
 #items td.item-quantity {
-  width: 40px;
+  width: 50px;
 }
-#items td.item-quantity input {
+
+.qty {
+  width: 100%;
+}
+
+#items td.item-base-price {
+  width: 13%;
+}
+
+.basePrice {
+  width: 100%;
+}
+
+#items td.item-pdv-percentage {
+  width: 50px;
+}
+
+.pdvPercentage {
+  width: 100%;
+}
+
+#items td.item-pdv-value {
+  width: 15%;
+}
+
+.pdvValue {
   width: 100%;
 }
 
 #items td.item-price {
-  width: 50px;
+  width: 13%;
+}
+
+.price {
+  width: 90%;
 }
 
 #items td.total-value {
+  width: 200px;
   text-align: center;
   border-left: 0;
   padding: 10px;
@@ -197,7 +229,7 @@ table th {
 
 #total,
 #totalPdv,
-#pdv {
+#totalPrice {
   font-weight: bold;
   background-color: #eee;
 }
@@ -328,9 +360,9 @@ table th {
 
 .signature-table {
   margin-top: 80px;
-  margin-left: 50px;
+  margin-left: 5%;
   text-align: center;
-  width: 900px;
+  width: 90%;
   border: 0px solid;
 }
 

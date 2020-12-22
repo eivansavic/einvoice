@@ -33,23 +33,23 @@
 			<div id="customer">
 				<table id="customer-payment" style="border-width: 1px;">
 					<tr>
-						<td class="meta-head">Datum izdavanja računa:</td>
+						<td class="meta-head">Datum izdavanja:</td>
 						<td><input type="text" class="date" id="date1"></input></td>
 					</tr>
 					<tr>
-						<td class="meta-head">Mesto izdavanja računa:</td>
+						<td class="meta-head">Mesto izdavanja:</td>
 						<td><input type="text" id="place" name="place" value="Novi Sad"/></td>
 					</tr>
 					<tr>
-						<td class="meta-head">Datum prometa dobara/usluga:</td>
+						<td class="meta-head">Datum prometa:</td>
 						<td><input type="text" class="date" id="date2"></input></td>
 					</tr>
 					<tr>
-						<td class="meta-head">Mesto prometa dobara/usluga:</td>
+						<td class="meta-head">Mesto prometa:</td>
 						<td><input type="text" id="traffic-place" name="traffic-place" value="Novi Sad"/></td>
 					</tr>
 					<tr>
-						<td class="meta-head">Valuta plaćanja:</td>
+						<td class="meta-head">Datum plaćanja:</td>
 						<td><input type="text" class="date" id="date3" name="date"></input></td>
 					</tr>
 				</table>
@@ -86,35 +86,38 @@
 				<tr class ="head-row">
 					<th>Br.</th>
 					<th>Naziv</th>
-					<th>Jedinična cena (RSD)</th>
+					<th>Jedinična cena</th>
 					<th>Količina</th>
-					<th>Cena</th>
+					<th>Poreska osnovica</th>
+					<th>Stopa PDV(%)</th>
+					<th>Iznos PDV</th>
+					<th>Iznos</th>
 				</tr>
 
 				<tr id="hiderow">
-					<td colspan="5">
+					<td colspan="8">
 						<button href="javascript:;" id="addrow">+</button>
 					</td>
 				</tr>
 				<tr>
-					<td colspan="2" class="blank"></td>
-					<td colspan="2" class="total-line"><strong>Ukupan iznos</strong></td>
+					<td colspan="3" class="blank"></td>
+					<td colspan="4" class="total-line"><strong>Osnovica</strong></td>
 					<td class="total-value">
 						<input type="number" id="total" value="0.00" disabled/>
 					</td>
 				</tr>
 				<tr>
-					<td colspan="2" class="blank"></td>
-					<td colspan="2" class="total-line"><strong>PDV: 20%</strong></td>
+					<td colspan="3" class="blank"></td>
+					<td colspan="4" class="total-line"><strong>PDV 20%</strong></td>
 					<td class="total-value">
-						<input type="number" id="pdv" value="0.00" disabled/>
+						<input type="number" id="totalPdv" value="0.00" disabled/>
 					</td>
 				</tr>
 				<tr>
-					<td colspan="2" class="blank"></td>
-					<td colspan="2" class="total-line"><strong>Ukupan iznos + PDV</strong></td>
+					<td colspan="3" class="blank"></td>
+					<td colspan="4" class="total-line"><strong>Ukupno sa PDV-om</strong></td>
 					<td class="total-value">
-						<input type="number" id="totalPdv" value="0.00" disabled/>
+						<input type="number" id="totalPrice" value="0.00" disabled/>
 					</td>
 				</tr>
 			</table>
