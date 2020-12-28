@@ -177,14 +177,18 @@ table th {
 
 .qty {
   width: 100%;
+  background-color: transparent;
+  color: black;
 }
 
 #items td.item-base-price {
-  width: 13%;
+  width: 15%;
 }
 
 .basePrice {
-  width: 100%;
+  width: 105%;
+  background-color: transparent;
+  color: black;
 }
 
 #items td.item-pdv-percentage {
@@ -193,26 +197,32 @@ table th {
 
 .pdvPercentage {
   width: 100%;
+  background-color: transparent;
+  color: black;
 }
 
 #items td.item-pdv-value {
-  width: 15%;
+  width: 17%;
 }
 
 .pdvValue {
-  width: 100%;
+  width: 120%;
+  background-color: transparent;
+  color: black;
 }
 
 #items td.item-price {
-  width: 13%;
+  width: 15%;
 }
 
 .price {
-  width: 90%;
+  width: 80%;
+  background-color: transparent;
+  color: black;
 }
 
 #items td.total-value {
-  width: 200px;
+  width: 150px;
   text-align: center;
   border-left: 0;
   padding: 10px;
@@ -263,8 +273,8 @@ table th {
   font-weight: bold;
   padding: 0px 3px;
   border: 1px solid;
-  top: -6px;
-  left: -22px;
+  top: -10px;
+  left: 20px;
   font-family: Verdana;
   font-size: 17px;
 }

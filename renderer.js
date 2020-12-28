@@ -98,19 +98,19 @@ function update_price() {
 }
 
 function update_total() {
-  var totalBasePrice = 0;
-  $(".basePrice").each(function (i) {
-    var price1 = $(this).val();
-    if (!isNaN(price1)) totalBasePrice += Number(price1);
-  });
-  totalBasePrice = roundNumber(totalBasePrice, 2);
+  // var totalBasePrice = 0;
+  // $(".basePrice").each(function (i) {
+  //   var price1 = $(this).val();
+  //   if (!isNaN(price1)) totalBasePrice += Number(price1);
+  // });
+  // totalBasePrice = roundNumber(totalBasePrice, 2);
 
-  var totalPdv = 0;
-  $(".pdvValue").each(function (i) {
-    var price2 = $(this).val();
-    if (!isNaN(price2)) totalPdv += Number(price2);
-  });
-  totalPdv = roundNumber(totalPdv, 2);
+  // var totalPdv = 0;
+  // $(".pdvValue").each(function (i) {
+  //   var price2 = $(this).val();
+  //   if (!isNaN(price2)) totalPdv += Number(price2);
+  // });
+  // totalPdv = roundNumber(totalPdv, 2);
 
   var totalPrice = 0;
   $(".price").each(function (i) {
@@ -118,6 +118,10 @@ function update_total() {
     if (!isNaN(price3)) totalPrice += Number(price3);
   });
   totalPrice = roundNumber(totalPrice, 2);
+
+  let pdvMultiplier = (20 * 100) / (20 + 100) / 100;
+  let totalPdv = roundNumber(totalPrice * pdvMultiplier, 2);
+  let totalBasePrice = roundNumber(totalPrice - totalPdv, 2);
 
   $("#total").val(totalBasePrice);
   $("#totalPdv").val(totalPdv);
